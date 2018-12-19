@@ -1,5 +1,6 @@
 import User from '../models/User';
 import { BaseSchema } from './BaseSchema';
+import { Status } from '../models/Status';
 
 export const UserScheme = new BaseSchema<User>({
     target: User,
@@ -52,6 +53,10 @@ export const UserScheme = new BaseSchema<User>({
         },
         Image: {
             type: "varchar"
+        },
+        Status: {
+            type: "enum",
+            enum: Status
         }
     }
 });
